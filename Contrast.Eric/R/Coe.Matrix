@@ -1,0 +1,5 @@
+####A very first trial for the package, let's say a contrast for a 3-group variable
+
+Coe.Matrix <- function(){
+
+}
