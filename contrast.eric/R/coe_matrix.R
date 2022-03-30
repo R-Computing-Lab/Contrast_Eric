@@ -30,14 +30,14 @@ coe_matrix_one <- function(col_factor, levels, coe) {
 
 #### Let's try more than one factor, say a 2X2 design
 
-Coe.Matrix.multi <- function(colFactor, levels, coe){
-      numFactor <- ncol(colFactor)
+coe_matrix_multi <- function(col_factor, levels, coe){
+      numFactor <- ncol(col_factor)
       if(numFactor==1){
-            Coe.Matrix.one(colFactor, levels, coe)
+            Coe.Matrix.one(col_factor, levels, coe)
       }
       if(numFactor>1){
             for (i in 1:numFactor) {
-                  for (j in 1:length(unique(colFactor[i]))) {
+                  for (j in 1:length(unique(col_factor[i]))) {
 
                   }
             }
