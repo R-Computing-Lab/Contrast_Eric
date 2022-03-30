@@ -34,7 +34,7 @@ coe_matrix_multi <- function(col_factor, levels, coe){
       numFactor <- ncol(col_factor)
       if(numFactor==1){
             coe_matrix_one(col_factor, levels, coe)
-			}
+      }
       if(numFactor>1){
             for (i in 1:numFactor) {
                   for (j in 1:length(unique(col_factor[i]))) {
