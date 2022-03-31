@@ -30,11 +30,30 @@ coe_matrix_one <- function(col_factor, levels, coe) {
 
 #### Let's try more than one factor, say a 2X2 design
 
-Coe.Matrix.multi <- function(colFactor, levels, coe){
+coe_matrix_multi <- function(colFactor, levels, coe){
       numFactor <- ncol(colFactor)
       if(numFactor==1){
-            Coe.Matrix.one(colFactor, levels, coe)
+        coe_matrix_one(colFactor, levels, coe)
       }
+
+      ## try to write a function to use recursion to get all possible combination
+      combn_recur <- function(colFactor){
+        numFactor2 <- ncol(colFactor)
+        allcol <- colFactor
+        if(numFactor2 > 1){
+
+          numFactor2 = numFactor2 - 1
+          combn_recur(allcol)
+
+          return()
+        }
+        if(numFactor2 == 1){
+          return()
+        }
+      }
+
+
+
       if(numFactor>1){
             for (i in 1:numFactor) {
                   for (j in 1:length(unique(colFactor[i]))) {
@@ -42,5 +61,6 @@ Coe.Matrix.multi <- function(colFactor, levels, coe){
                   }
             }
       }
+
       combn()
 }
