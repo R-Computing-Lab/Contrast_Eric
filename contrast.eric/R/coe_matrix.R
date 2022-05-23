@@ -24,7 +24,7 @@ coe_matrix_multi <- function(colFactor, levels, coe){
         }
       }else{
         for(i in 1:nrow(allcomb)){
-          all_levels[i] <- do.call(paste, c(allcomb[i,], sep = "X"))
+          all_levels[i] <- do.call(paste, c(allcomb[i,], sep = "<>"))
         }
       }
 
@@ -44,7 +44,9 @@ coe_matrix_multi <- function(colFactor, levels, coe){
         #tempcol <- levels[i]
         coe_matrix[i,][levels[[i]]] <- coe[[i]]
       }
-
+      for(i in 1:nrow(coe_matrix)){
+        rownames(coe_matrix)[i] <- paste("Contrast",i,sep = "")
+      }
       return(coe_matrix)
 }
 
